@@ -193,18 +193,18 @@ function SettingsScreen() {
         <div className="row">
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">Your Settings</h1>
-
             <ListErrors errors={errors} />
-
             <SettingsForm
               currentUser={currentUser}
               onSaveSettings={saveSettings}
             />
-
             <hr />
-
             <button className="btn btn-outline-danger" onClick={logoutUser}>
               Or click here to logout.
+            </button>
+            &nbsp;&nbsp;&nbsp;
+            <button className="btn" onClick={logoutUser}>
+              Membership
             </button>
           </div>
         </div>
