@@ -31,6 +31,11 @@ const SettingsScreen = lazy(() =>
     /* webpackChunkName: "SettingsScreen", webpackPrefetch: true  */ '../features/auth/SettingsScreen'
   )
 );
+const AdminPage = lazy(() =>
+  import(
+    /* webpackChunkName: "SettingsScreen", webpackPrefetch: true */ '../components/AdminPage'
+  )
+);
 
 function App() {
   const dispatch = useDispatch();
@@ -61,7 +66,9 @@ function App() {
             <Route path="/editor/:slug" element={<Editor />} />
             <Route path="/editor" element={<Editor />} />
             <Route path="/article/:slug" element={<Article />} />
+            <Route path="/admin" element={<AdminPage />} />
             <Route path="/settings" element={<SettingsScreen />} />
+
             <Route
               path="/@:username/favorites"
               element={<Profile isFavoritePage />}
