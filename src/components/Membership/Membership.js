@@ -3,12 +3,7 @@ import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { useSelector } from 'react-redux';
 import { selectIsAuthenticated } from '../../features/auth/authSlice';
-function auth() {
-  const isAuthenticated = useSelector(selectIsAuthenticated);
-  if (!isAuthenticated) {
-    return null;
-  }
-}
+import { Navigate } from 'react-router-dom';
 
 class PaymentForm extends React.Component {
   state = {
@@ -141,6 +136,12 @@ class PaymentForm extends React.Component {
 }
 
 function MainView() {
+  // Redirect if not authenticated
+  const isAuthenticated = useSelector(selectIsAuthenticated);
+  if (!isAuthenticated) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <div>
       <PaymentForm />
