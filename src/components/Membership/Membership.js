@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import { useSelector } from 'react-redux';
+import { selectIsAuthenticated } from '../../features/auth/authSlice';
+function auth() {
+  const isAuthenticated = useSelector(selectIsAuthenticated);
+  if (!isAuthenticated) {
+    return null;
+  }
+}
 
-export default class PaymentForm extends React.Component {
+class PaymentForm extends React.Component {
   state = {
     cvc: '',
     expiry: '',
@@ -131,4 +139,12 @@ export default class PaymentForm extends React.Component {
     );
   }
 }
-// export default memo(MainView);
+
+function MainView() {
+  return (
+    <div>
+      <PaymentForm />
+    </div>
+  );
+}
+export default memo(MainView);
