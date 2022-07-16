@@ -1,32 +1,6 @@
-// import React from 'react';
-//
-// function submitForm(e) {
-//   e.preventDefault();
-// }
-// function CreditCard() {
-//   return (
-//     <form className="" onSubmit={(e) => submitForm(e)}>
-//       <textarea></textarea>
-//     </form>
-//   );
-// }
-//
-// function Membership() {
-//   return (
-//     <div className="">
-//       <h1>Membership</h1>
-//       <CreditCard></CreditCard>
-//     </div>
-//   );
-// }
-//
-// export default Membership;
-
 import React from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
-import { createArticle, updateArticle } from '../../reducers/article';
-import { useNavigate, useParams } from 'react-router';
 
 export default class PaymentForm extends React.Component {
   state = {
@@ -38,7 +12,6 @@ export default class PaymentForm extends React.Component {
   };
   constructor(props) {
     super(props);
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -158,3 +131,4 @@ export default class PaymentForm extends React.Component {
     );
   }
 }
+// export default memo(MainView);
