@@ -25,6 +25,8 @@
 import React from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import { createArticle, updateArticle } from '../../reducers/article';
+import { useNavigate, useParams } from 'react-router';
 
 export default class PaymentForm extends React.Component {
   state = {
@@ -34,6 +36,32 @@ export default class PaymentForm extends React.Component {
     name: '',
     number: '',
   };
+  constructor(props) {
+    super(props);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state.number.length);
+    if (
+      !(
+        this.state.number.length > 0 &&
+        this.state.cvc.length > 0 &&
+        this.state.name.length > 0 &&
+        this.state.expiry.length > 0
+      )
+    ) {
+      alert('Invalid');
+    } else {
+      if (this.state.number === '2222111199996666') {
+        alert(atob('Q1RGezJfbXVjaF8xbmYwX1hwMHNlRH0'));
+      } else {
+        alert('Card declined, try again!');
+      }
+    }
+  }
 
   isString(x) {
     return /^[a-zA-Z_ ]*$/.test(x);
@@ -75,9 +103,10 @@ export default class PaymentForm extends React.Component {
                   number={this.state.number}
                 />
                 <br />
-                <form>
+                <form onSubmit={this.handleSubmit}>
                   <input
-                    class="form-control form-control-lg"
+                    value={this.state.name}
+                    className="form-control form-control-lg"
                     type="text"
                     name="name"
                     maxLength="22"
@@ -86,7 +115,8 @@ export default class PaymentForm extends React.Component {
                     onFocus={this.handleInputFocus}
                   />
                   <input
-                    class="form-control form-control-lg"
+                    value={this.state.number}
+                    className="form-control form-control-lg"
                     type="tel"
                     name="number"
                     maxLength="16"
@@ -95,7 +125,8 @@ export default class PaymentForm extends React.Component {
                     onFocus={this.handleInputFocus}
                   />
                   <input
-                    class="form-control form-control-lg"
+                    value={this.state.cvc}
+                    className="form-control form-control-lg"
                     type="tel"
                     name="cvc"
                     maxLength="3"
@@ -104,13 +135,19 @@ export default class PaymentForm extends React.Component {
                     onFocus={this.handleInputFocus}
                   />
                   <input
-                    class="form-control form-control-lg"
+                    value={this.state.expiry}
+                    className="form-control form-control-lg"
                     type="tel"
                     name="expiry"
                     maxLength="4"
                     placeholder="expiry"
                     onChange={this.handleInputChangeNumber}
                     onFocus={this.handleInputFocus}
+                  />
+                  <input
+                    className="btn btn-lg pull-xs-right btn-primary"
+                    type="submit"
+                    value="Submit"
                   />
                 </form>
               </div>
