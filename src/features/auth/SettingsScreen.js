@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 import ListErrors from '../../components/ListErrors';
 import {
@@ -203,9 +203,12 @@ function SettingsScreen() {
               Or click here to logout.
             </button>
             &nbsp;&nbsp;&nbsp;
-            <button className="btn" onClick={logoutUser}>
+            {/*<button className="btn" onClick={logoutUser}>*/}
+            {/*  Membership*/}
+            {/*</button>*/}
+            <Link to="/membership" className="btn btn-outline-success">
               Membership
-            </button>
+            </Link>
           </div>
         </div>
       </div>
