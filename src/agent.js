@@ -184,7 +184,7 @@ const Auth = {
    * @returns {Promise<UserAuth>}
    */
   login: (email, password) =>
-    requests.post('users/login', { user: { email, password } }),
+    requests.post('/v2/users/login', { user: { email, password } }),
   /**
    * Register with username, email and password
    *
