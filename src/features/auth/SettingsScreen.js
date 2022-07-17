@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 import ListErrors from '../../components/ListErrors';
 import {
@@ -193,19 +193,22 @@ function SettingsScreen() {
         <div className="row">
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">Your Settings</h1>
-
             <ListErrors errors={errors} />
-
             <SettingsForm
               currentUser={currentUser}
               onSaveSettings={saveSettings}
             />
-
             <hr />
-
             <button className="btn btn-outline-danger" onClick={logoutUser}>
               Or click here to logout.
             </button>
+            &nbsp;&nbsp;&nbsp;
+            {/*<button className="btn" onClick={logoutUser}>*/}
+            {/*  Membership*/}
+            {/*</button>*/}
+            <Link to="/membership" className="btn btn-outline-success">
+              Membership
+            </Link>
           </div>
         </div>
       </div>
