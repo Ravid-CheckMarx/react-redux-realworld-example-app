@@ -35,35 +35,35 @@ module.exports = (on, config) => {
         title: faker.lorem.words(),
         description: faker.lorem.sentences(),
         body: faker.fake(`![{{lorem.words}}]({{image.city}})
-  
+
   > {{lorem.sentence}}
-  
+
   -----
-  
+
   ## {{lorem.text}}
-  
+
   {{lorem.paragraph}}
-  
+
   - _{{lorem.word}}_
   - _{{lorem.word}}_
   - _{{lorem.word}}_
-  
+
   ### {{lorem.text}}
-  
+
   {{lorem.paragraph}}
-  
+
   1. **{{lorem.words}}**
   2. **{{lorem.words}}**
   3. **{{lorem.words}}**
-  
+
   {{lorem.paragraph}}
-  
+
   * [x] ~{{lorem.words}}~
   * [x] ~{{lorem.words}}~
   * [ ] {{lorem.words}}
-  
+
   > {{hacker.phrase}}
-  
+
   \`\`\`
   <script>
     alert("{{hacker.phrase}}");
@@ -132,7 +132,7 @@ module.exports = (on, config) => {
         .then((body) => body.comment);
 
       if (followUser) {
-        const { token } = await fetch(`${config.env.apiUrl}/users/login`, {
+        const { token } = await fetch(`${config.env.apiUrl}/v2/users/login`, {
           method: 'POST',
           body: JSON.stringify({
             user: {
