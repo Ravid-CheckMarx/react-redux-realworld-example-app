@@ -9,7 +9,7 @@ describe('Login page', () => {
   const passwordPlaceholder = 'Password';
 
   beforeEach(() => {
-    cy.intercept('POST', '**/users/login').as('login').visit('/login');
+    cy.intercept('POST', '**/v2/users/login').as('login').visit('/login');
   });
 
   it('should submit the login form', () => {

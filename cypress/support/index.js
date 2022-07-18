@@ -35,7 +35,7 @@ Cypress.Commands.add(
   'login',
   (email = Cypress.env('email'), password = Cypress.env('password')) => {
     cy.request({
-      url: `${Cypress.env('apiUrl')}/users/login`,
+      url: `${Cypress.env('apiUrl')}/v2/users/login`,
       method: 'POST',
       body: { user: { email, password } },
     })

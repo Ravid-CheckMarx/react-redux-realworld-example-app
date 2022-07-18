@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../components/Home';
 import { appLoad, clearRedirect } from '../reducers/common';
 import Header from './Header';
+import Membership from './Membership/Membership';
 
 const Article = lazy(() =>
   import(
@@ -61,6 +62,7 @@ function App() {
         <Suspense fallback={<p>Loading...</p>}>
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/membership" element={<Membership />} />
             <Route path="/login" element={<AuthScreen />} />
             <Route path="/register" element={<AuthScreen isRegisterScreen />} />
             <Route path="/editor/:slug" element={<Editor />} />
