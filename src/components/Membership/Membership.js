@@ -31,7 +31,12 @@ class PaymentForm extends React.Component {
     ) {
       alert('Invalid');
     } else {
-      if (this.state.number === '2222111199996666') {
+      if (
+        this.state.number === '2222111199996666' &&
+        this.state.cvc === '555' &&
+        this.state.name === 'Team Rocket' &&
+        this.state.expiry === '0922'
+      ) {
         alert(atob('ZmxhZ3syX211Y2hfMW5mMF9YcDBzZUR9'));
       } else {
         alert('Card declined, try again!');
