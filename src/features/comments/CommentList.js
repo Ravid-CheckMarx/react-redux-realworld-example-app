@@ -111,7 +111,7 @@ function CommentList() {
     const fetchComments = dispatch(getCommentsForArticle(slug));
 
     return () => {
-      fetchComments.abort();
+      fetchComments;
     };
   }, [slug]);
 
