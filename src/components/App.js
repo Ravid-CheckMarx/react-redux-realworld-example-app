@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../components/Home';
 import { appLoad, clearRedirect } from '../reducers/common';
 import Header from './Header';
+import Footer from './Footer';
 import Membership from './Membership/Membership';
 
 const Article = lazy(() =>
@@ -78,6 +79,7 @@ function App() {
             <Route path="/@:username" element={<Profile />} />
           </Routes>
         </Suspense>
+        <Footer />
       </>
     );
   }
