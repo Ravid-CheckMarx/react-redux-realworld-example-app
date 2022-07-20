@@ -4,7 +4,6 @@ import 'react-credit-cards/es/styles-compiled.css';
 import { useSelector } from 'react-redux';
 import { selectIsAuthenticated } from '../../features/auth/authSlice';
 import { Navigate } from 'react-router-dom';
-import agent from '../../agent';
 
 class PaymentForm extends React.Component {
   state = {
