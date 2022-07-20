@@ -18,7 +18,9 @@ function ArticleList() {
   }
 
   if (articles.length === 0) {
-    return <div className="article-preview">No articles are here... yet.</div>;
+    return (
+      <div style={{ 'margin-top': '3%' }}>No articles are here... yet.</div>
+    );
   }
 
   return (
