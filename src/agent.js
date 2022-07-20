@@ -194,7 +194,7 @@ const Auth = {
    * @returns {Promise<UserAuth>}
    */
   register: (username, email, password) =>
-    requests.post('/v2/users', { user: { username, email, password } }),
+    requests.post('/users', { user: { username, email, password } }),
   /**
    * Update user
    *
