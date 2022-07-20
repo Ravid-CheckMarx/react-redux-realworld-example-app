@@ -4,6 +4,7 @@ import 'react-credit-cards/es/styles-compiled.css';
 import { useSelector } from 'react-redux';
 import { selectIsAuthenticated } from '../../features/auth/authSlice';
 import { Navigate } from 'react-router-dom';
+import agent from '../../agent';
 
 class PaymentForm extends React.Component {
   state = {
@@ -20,7 +21,6 @@ class PaymentForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.number.length);
     if (
       !(
         this.state.number.length > 0 &&
@@ -31,16 +31,27 @@ class PaymentForm extends React.Component {
     ) {
       alert('Invalid');
     } else {
-      if (
-        this.state.number === '2222111199996666' &&
-        this.state.cvc === '555' &&
-        this.state.name.toLowerCase() === 'Team Rocket'.toLowerCase() &&
-        this.state.expiry === '0922'
-      ) {
-        alert(atob('ZmxhZ3syX211Y2hfMW5mMF9YcDBzZUR9'));
-      } else {
-        alert('Card declined, try again!');
-      }
+      (async () => {
+        const rawResponse = await fetch(
+          'http://localhost:8000/api/membership',
+          {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              authorization: `Token ${localStorage.getItem('jwt')}`,
+            },
+            body: JSON.stringify({
+              number: this.state.number,
+              cvc: this.state.cvc,
+              name: this.state.name,
+              expiry: this.state.expiry,
+            }),
+          }
+        );
+        const content = await rawResponse.json();
+        alert(content);
+      })();
     }
   }
 
