@@ -203,9 +203,6 @@ function SettingsScreen() {
               Or click here to logout.
             </button>
             &nbsp;&nbsp;&nbsp;
-            {/*<button className="btn" onClick={logoutUser}>*/}
-            {/*  Membership*/}
-            {/*</button>*/}
             <Link to="/membership" className="btn btn-outline-success">
               Membership
             </Link>
