@@ -97,7 +97,7 @@ class PaymentForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                   <input
                     value={this.state.name}
-                    className="form-control form-control-lg"
+                    className="form-group form-control form-control-lg"
                     type="text"
                     name="name"
                     maxLength="22"
@@ -107,7 +107,7 @@ class PaymentForm extends React.Component {
                   />
                   <input
                     value={this.state.number}
-                    className="form-control form-control-lg"
+                    className="form-group form-control form-control-lg"
                     type="tel"
                     name="number"
                     maxLength="16"
@@ -117,7 +117,7 @@ class PaymentForm extends React.Component {
                   />
                   <input
                     value={this.state.cvc}
-                    className="form-control form-control-lg"
+                    className="form-group form-control form-control-lg"
                     type="tel"
                     name="cvc"
                     maxLength="3"
@@ -127,7 +127,7 @@ class PaymentForm extends React.Component {
                   />
                   <input
                     value={this.state.expiry}
-                    className="form-control form-control-lg"
+                    className="form-group form-control form-control-lg"
                     type="tel"
                     name="expiry"
                     maxLength="4"
