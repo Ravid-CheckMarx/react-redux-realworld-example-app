@@ -1,5 +1,27 @@
+@font-face {
+  font-family: 'GT America';
+  src: url('TTF/GT-America-LCG-Standard-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GT America Bold';
+  src: url('TTF/GT-America-LCG-Standard-Bold.ttf') format('truetype');
+}
+
 .logo-font {
   font-family: titillium web, sans-serif;
+}
+
+.banner-logo-img {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-logo {
+  color: #109cf1;
+  font-family: 'GT America', Fallback, sans-serif;
 }
 
 html {
@@ -19,6 +41,7 @@ html {
 }
 
 body {
+  font-family: 'GT America', Fallback, sans-serif !important;
   margin: 0;
 }
 
@@ -7103,7 +7126,7 @@ footer .attribution {
 
 .banner {
   color: #fff;
-  background: #333;
+  background: #ec8cb578 !important;
   padding: 2rem;
   margin-bottom: 2rem;
 }
