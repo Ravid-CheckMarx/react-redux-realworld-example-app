@@ -88,6 +88,7 @@ function AuthScreen({ isRegisterScreen }) {
                       name="username"
                       value={username}
                       onChange={changeUsername}
+                      required
                     />
                   </fieldset>
                 ) : null}
@@ -100,6 +101,7 @@ function AuthScreen({ isRegisterScreen }) {
                     autoComplete="email"
                     value={email}
                     onChange={changeEmail}
+                    required
                   />
                 </fieldset>
 
@@ -112,6 +114,7 @@ function AuthScreen({ isRegisterScreen }) {
                     name="password"
                     value={password}
                     onChange={changePassword}
+                    required
                   />
                 </fieldset>
 

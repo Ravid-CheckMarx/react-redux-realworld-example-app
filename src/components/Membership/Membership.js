@@ -104,6 +104,7 @@ class PaymentForm extends React.Component {
                     placeholder="Name"
                     onChange={this.handleInputChangeString}
                     onFocus={this.handleInputFocus}
+                    required
                   />
                   <input
                     value={this.state.number}
@@ -114,6 +115,7 @@ class PaymentForm extends React.Component {
                     placeholder="Card Number"
                     onChange={this.handleInputChangeNumber}
                     onFocus={this.handleInputFocus}
+                    required
                   />
                   <input
                     value={this.state.cvc}
@@ -124,6 +126,7 @@ class PaymentForm extends React.Component {
                     placeholder="cvc"
                     onChange={this.handleInputChangeNumber}
                     onFocus={this.handleInputFocus}
+                    required
                   />
                   <input
                     value={this.state.expiry}
@@ -134,6 +137,7 @@ class PaymentForm extends React.Component {
                     placeholder="expiry"
                     onChange={this.handleInputChangeNumber}
                     onFocus={this.handleInputFocus}
+                    required
                   />
                   <input
                     className="btn btn-lg pull-xs-right btn-primary"
