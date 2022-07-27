@@ -102,6 +102,10 @@ function Editor({ match }) {
    */
   const submitForm = (event) => {
     event.preventDefault();
+    if (!title || !title.trim()) {
+      alert('Article Title is required');
+      return false;
+    }
     const article = {
       slug,
       title,

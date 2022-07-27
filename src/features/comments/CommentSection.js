@@ -44,6 +44,7 @@ function CommentForm() {
           rows={3}
           value={body}
           onChange={changeBody}
+          required
         />
       </div>
 
