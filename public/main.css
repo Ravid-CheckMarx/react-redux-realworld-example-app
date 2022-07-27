@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'GT America';
+  src: url('TTF/GT-America-LCG-Standard-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GT America Bold';
+  src: url('TTF/GT-America-LCG-Standard-Bold.ttf') format('truetype');
+}
+
 .logo-font {
   font-family: titillium web, sans-serif;
 }
@@ -11,7 +21,7 @@
 
 .nav-logo {
   color: #109cf1;
-  font-family: 'GT America', Sans-serif;
+  font-family: 'GT America', Fallback, sans-serif;
 }
 
 html {
@@ -31,6 +41,7 @@ html {
 }
 
 body {
+  font-family: 'GT America', Fallback, sans-serif !important;
   margin: 0;
 }
 
