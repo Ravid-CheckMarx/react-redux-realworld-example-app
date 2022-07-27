@@ -29,7 +29,7 @@ export const appLoad = (token) => (dispatch) => {
 };
 
 const initialState = {
-  appName: 'API-Risk',
+  appName: 'c{api}tal',
   appLoaded: false,
   viewChangeCounter: 0,
   redirectTo: undefined,
