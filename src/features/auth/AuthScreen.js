@@ -51,11 +51,7 @@ function AuthScreen({ isRegisterScreen }) {
         ? register({ username, email, password })
         : login({ email, password })
     );
-    if (isRegisterScreen) {
-      navigate('/login');
-    } else {
-      navigate('/');
-    }
+    navigate('/');
   };
 
   return (

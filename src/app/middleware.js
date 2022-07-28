@@ -1,5 +1,10 @@
 import agent from '../agent';
-import { login, logout, register } from '../features/auth/authSlice';
+import {
+  login,
+  logout,
+  register,
+  updateUser,
+} from '../features/auth/authSlice';
 
 const localStorageMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -12,6 +17,11 @@ const localStorageMiddleware = (store) => (next) => (action) => {
     case logout.type:
       window.localStorage.removeItem('jwt');
       agent.setToken(undefined);
+      break;
+
+    case updateUser.fulfilled.type:
+      window.localStorage.setItem('jwt', action.payload.token);
+      agent.setToken(action.payload.token);
       break;
   }
 
