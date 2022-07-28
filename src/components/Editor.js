@@ -100,12 +100,8 @@ function Editor({ match }) {
   /**
    * @type {React.MouseEventHandler<HTMLButtonElement>}
    */
-  const submitForm = (event) => {
+  const submitForm = async (event) => {
     event.preventDefault();
-    if (!title || !title.trim()) {
-      alert('Article Title is required');
-      return false;
-    }
     const article = {
       slug,
       title,
@@ -113,9 +109,13 @@ function Editor({ match }) {
       body,
       tagList,
     };
-
-    dispatch(slug ? updateArticle(article) : createArticle(article));
-    navigate('/');
+    let response = await dispatch(
+      slug ? updateArticle(article) : createArticle(article)
+    );
+    console.log(response);
+    if (response.meta.requestStatus == 'fulfilled') {
+      navigate('/');
+    }
   };
 
   useEffect(() => {
