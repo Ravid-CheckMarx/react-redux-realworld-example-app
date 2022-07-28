@@ -44,16 +44,17 @@ function AuthScreen({ isRegisterScreen }) {
   /**
    * @type {React.FormEventHandler<HTMLFormElement>}
    */
-  const authenticateUser = (event) => {
+  const authenticateUser = async (event) => {
     event.preventDefault();
-    dispatch(
+    let response = await dispatch(
       isRegisterScreen
         ? register({ username, email, password })
         : login({ email, password })
     );
-    navigate('/');
+    if (response.meta.requestStatus == 'fulfilled') {
+      navigate('/');
+    }
   };
-
   return (
     <div className="auth-page">
       <div className="container page">
