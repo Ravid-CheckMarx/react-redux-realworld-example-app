@@ -9,7 +9,7 @@ import React, { memo } from 'react';
 function Footer() {
   return (
     <footer className="footer">
-      © 2022 Checkmarx API Training and Learning. All Rights Reserved.
+      Built with ❤ by Checkmarx's Research team
     </footer>
   );
 }
