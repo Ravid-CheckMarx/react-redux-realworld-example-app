@@ -18,7 +18,7 @@ function Home() {
   const isAuthenticated = useSelector(selectIsAuthenticated);
 
   useEffect(() => {
-    const defaultTab = isAuthenticated ? 'articles' : 'all';
+    const defaultTab = isAuthenticated ? 'all' : 'all';
     const fetchArticles = dispatch(changeTab(defaultTab));
 
     return () => {
