@@ -18,7 +18,7 @@ function ArticleList() {
   }
 
   if (articles.length === 0) {
-    return <div style={{ marginTop: '3%' }}>No articles are here... yet.</div>;
+    return <div style={{ 'margin-top': '3%' }}>No articles are here.</div>;
   }
 
   return (

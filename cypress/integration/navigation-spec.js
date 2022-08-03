@@ -114,7 +114,7 @@ describe('Navigation (authenticated)', () => {
     cy.wait('@getAllArticles').its('response.statusCode').should('equal', 200);
 
     cy.findByRole('button', {
-      name: /your feed/i,
+      name: /my feed/i,
     }).click();
   });
 
