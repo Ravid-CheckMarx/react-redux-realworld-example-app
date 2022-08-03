@@ -6,12 +6,12 @@ import { changeTab } from '../../reducers/articleList';
 import { selectIsAuthenticated } from '../../features/auth/authSlice';
 
 /**
- * Your feed tab
+ * My feed tab
  *
  * @example
- * <YourFeedTab />
+ * <MyFeedTab />
  */
-function YourFeedTab() {
+function MyFeedTab() {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector(selectIsAuthenticated);
   const currentTab = useSelector((state) => state.articleList.tab);
@@ -32,7 +32,7 @@ function YourFeedTab() {
         className={isActiveTab ? 'nav-link active' : 'nav-link'}
         onClick={dispatchChangeTab}
       >
-        Your Feed
+        My Feed
       </button>
     </li>
   );
@@ -103,7 +103,7 @@ function MainView() {
     <div className="col-md-9">
       <div className="feed-toggle">
         <ul className="nav nav-pills outline-active">
-          <YourFeedTab />
+          <MyFeedTab />
 
           <GlobalFeedTab />
 
