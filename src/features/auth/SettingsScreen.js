@@ -117,6 +117,7 @@ function SettingsForm({ currentUser, onSaveSettings }) {
             name="username"
             value={username}
             onChange={changeUsername}
+            required
           />
         </fieldset>
 

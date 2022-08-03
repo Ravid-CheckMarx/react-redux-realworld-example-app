@@ -44,20 +44,17 @@ function AuthScreen({ isRegisterScreen }) {
   /**
    * @type {React.FormEventHandler<HTMLFormElement>}
    */
-  const authenticateUser = (event) => {
+  const authenticateUser = async (event) => {
     event.preventDefault();
-    dispatch(
+    let response = await dispatch(
       isRegisterScreen
         ? register({ username, email, password })
         : login({ email, password })
     );
-    if (isRegisterScreen) {
-      navigate('/login');
-    } else {
+    if (response.meta.requestStatus == 'fulfilled') {
       navigate('/');
     }
   };
-
   return (
     <div className="auth-page">
       <div className="container page">
@@ -88,6 +85,7 @@ function AuthScreen({ isRegisterScreen }) {
                       name="username"
                       value={username}
                       onChange={changeUsername}
+                      required
                     />
                   </fieldset>
                 ) : null}
@@ -100,6 +98,7 @@ function AuthScreen({ isRegisterScreen }) {
                     autoComplete="email"
                     value={email}
                     onChange={changeEmail}
+                    required
                   />
                 </fieldset>
 
@@ -112,6 +111,7 @@ function AuthScreen({ isRegisterScreen }) {
                     name="password"
                     value={password}
                     onChange={changePassword}
+                    required
                   />
                 </fieldset>
 

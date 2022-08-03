@@ -100,7 +100,7 @@ function Editor({ match }) {
   /**
    * @type {React.MouseEventHandler<HTMLButtonElement>}
    */
-  const submitForm = (event) => {
+  const submitForm = async (event) => {
     event.preventDefault();
     const article = {
       slug,
@@ -109,9 +109,13 @@ function Editor({ match }) {
       body,
       tagList,
     };
-
-    dispatch(slug ? updateArticle(article) : createArticle(article));
-    navigate('/');
+    let response = await dispatch(
+      slug ? updateArticle(article) : createArticle(article)
+    );
+    console.log(response);
+    if (response.meta.requestStatus == 'fulfilled') {
+      navigate('/');
+    }
   };
 
   useEffect(() => {

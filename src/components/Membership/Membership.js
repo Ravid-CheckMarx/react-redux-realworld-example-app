@@ -97,43 +97,47 @@ class PaymentForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                   <input
                     value={this.state.name}
-                    className="form-control form-control-lg"
+                    className="form-group form-control form-control-lg"
                     type="text"
                     name="name"
                     maxLength="22"
                     placeholder="Name"
                     onChange={this.handleInputChangeString}
                     onFocus={this.handleInputFocus}
+                    required
                   />
                   <input
                     value={this.state.number}
-                    className="form-control form-control-lg"
+                    className="form-group form-control form-control-lg"
                     type="tel"
                     name="number"
                     maxLength="16"
                     placeholder="Card Number"
                     onChange={this.handleInputChangeNumber}
                     onFocus={this.handleInputFocus}
+                    required
                   />
                   <input
                     value={this.state.cvc}
-                    className="form-control form-control-lg"
+                    className="form-group form-control form-control-lg"
                     type="tel"
                     name="cvc"
                     maxLength="3"
                     placeholder="cvc"
                     onChange={this.handleInputChangeNumber}
                     onFocus={this.handleInputFocus}
+                    required
                   />
                   <input
                     value={this.state.expiry}
-                    className="form-control form-control-lg"
+                    className="form-group form-control form-control-lg"
                     type="tel"
                     name="expiry"
                     maxLength="4"
                     placeholder="expiry"
                     onChange={this.handleInputChangeNumber}
                     onFocus={this.handleInputFocus}
+                    required
                   />
                   <input
                     className="btn btn-lg pull-xs-right btn-primary"

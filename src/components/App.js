@@ -39,6 +39,12 @@ const AdminPage = lazy(() =>
   )
 );
 
+const Logging = lazy(() =>
+  import(
+    /* webpackChunkName: "SettingsScreen", webpackPrefetch: true */ '../components/Logging'
+  )
+);
+
 function App() {
   const dispatch = useDispatch();
   const redirectTo = useSelector((state) => state.common.redirectTo);
@@ -70,6 +76,7 @@ function App() {
             <Route path="/editor" element={<Editor />} />
             <Route path="/article/:slug" element={<Article />} />
             <Route path="/admin" element={<AdminPage />} />
+            <Route path="/logging" element={<Logging />} />
             <Route path="/settings" element={<SettingsScreen />} />
 
             <Route

@@ -7,6 +7,10 @@ import React, { memo } from 'react';
  * <Footer />
  */
 function Footer() {
-  return <footer className="footer">x Created by Checkmrax ltd.</footer>;
+  return (
+    <footer className="footer">
+      Built with ❤ by Checkmarx's Research team
+    </footer>
+  );
 }
 export default memo(Footer);

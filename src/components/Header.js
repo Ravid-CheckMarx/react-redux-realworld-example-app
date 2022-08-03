@@ -96,7 +96,14 @@ function Header() {
     <nav className="navbar navbar-light">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          {appName.toLowerCase()}
+          <span className="nav-logo">
+            c{'{'}
+            {<span style={{ color: '#FB86B6' }}>api</span>}
+            {'}'}tal
+          </span>
+          {
+            //appName.toLowerCase()
+          }
         </Link>
 
         {isAuthenticated ? <LoggedInNavbar /> : <LoggedOutNavbar />}
