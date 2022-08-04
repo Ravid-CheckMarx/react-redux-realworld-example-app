@@ -20,7 +20,9 @@ function ListErrors({ errors }) {
     return null;
   }
 
-  return <ul className="error-messages">{errors}</ul>;
+  return (
+    <ul className="error-messages">{errors[0].msg ? errors[0].msg : errors}</ul>
+  );
 }
 
 export default memo(ListErrors);
